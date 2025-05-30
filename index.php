@@ -1,8 +1,13 @@
-<html>
-  <head>
-    <title>PHP Test</title>
-  </head>
-  <bodyxzz1>
-    <?php echo '<p>Hello World</p>'; ?> 
+<?php
 
-</html>
+require_once 'database.php';
+
+$conn = db_connect();
+
+if ($conn) {
+    echo "Database connection successful!";
+} else {
+    echo "Database connection failed!";
+}
+
+?>
