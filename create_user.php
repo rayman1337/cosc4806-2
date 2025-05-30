@@ -14,8 +14,14 @@ unset($_SESSION['error'], $_SESSION['success']);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $enteredUsername = $_POST['username'];
     $enteredPassword = $_POST['password'];
+    
+    if (strlen($enteredPassword) < 10) {
+        $_SESSION['error'] = "Password must be at least 10 characters long.";
+        header("Location: create_user.php");
+        exit;
+    }
 
-
+       
     $userObject = new User();
     $created = $userObject->create_user($enteredUsername, $enteredPassword);
 
