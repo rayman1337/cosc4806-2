@@ -12,8 +12,8 @@ $success = $_SESSION['success'] ?? null;
 unset($_SESSION['error'], $_SESSION['success']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $enteredUsername = $_POST['username'];
-    $enteredPassword = $_POST['password'];
+    $enteredUsername = trim($_POST['username']);
+    $enteredPassword = trim($_POST['password']);
 
     if (empty($enteredUsername) || empty($enteredPassword)){
         $_SESSION['error'] = "Username and password are required.";
