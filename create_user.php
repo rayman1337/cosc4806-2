@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($enteredUsername) || empty($enteredPassword)){
         $_SESSION['error'] = "Username and password are required.";
         header("Location: create_user.php");
+        exit;
     }
     
     if (strlen($enteredPassword) < 10) {
