@@ -14,6 +14,11 @@ unset($_SESSION['error'], $_SESSION['success']);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $enteredUsername = $_POST['username'];
     $enteredPassword = $_POST['password'];
+
+    if (empty($enteredUsername) || empty($enteredPassword)){
+        $_SESSION['error'] = "Username and password are required.";
+        header("Location: create_user.php");
+    }
     
     if (strlen($enteredPassword) < 10) {
         $_SESSION['error'] = "Password must be at least 10 characters long.";
