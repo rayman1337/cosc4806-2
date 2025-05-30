@@ -1,11 +1,20 @@
 <?php
+session_start();
 
-require_once 'user.php';
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    header("Location: login.php");
+    exit;
+}
 
-$user = new User();
-
-$users = $user->get_all_users();
-
-print_r($users);
-
+$username = $_SESSION['username'];
+$date = date("l, F j, Y - g:i A");
 ?>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Welcome, <?= $username ?>!</h2>
+    <p>Logged in at <?= $date ?></p>
+    <a href="logout.php">Logout</a>
+</body>
+</html>
