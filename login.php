@@ -13,7 +13,7 @@ unset($_SESSION['error']);
 <!DOCTYPE html>
 <html>
 <body>
-    <h2>Assignment-1 Login</h2>
+    <h2>Assignment-2 Login</h2>
     <?php if ($error): ?>
         <p style="color:red;"><?= $error ?></p>
     <?php endif; ?>
