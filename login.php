@@ -22,5 +22,7 @@ unset($_SESSION['error']);
         <label>Password: <input type="password" name="password" required></label><br><br>
         <input type="submit" value="Login">
     </form>
+    <p>Create an account? <a href="create_user.php">Create Account</a>.</p>
+
 </body>
 </html>
