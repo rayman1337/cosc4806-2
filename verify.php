@@ -10,8 +10,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $enteredUsername = $_POST['username'];
-    $enteredPassword = $_POST['password'];
+    $enteredUsername = trim($_POST['username']);
+    $enteredPassword = trim($_POST['password']);
 
     if (!isset($_SESSION['failed_login_attempts'])) {
         $_SESSION['failed_login_attempts'] = 0;
