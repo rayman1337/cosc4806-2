@@ -1,13 +1,11 @@
 <?php
 
-require_once 'database.php';
+require_once 'user.php';
 
-$conn = db_connect();
+$user = new User();
 
-if ($conn) {
-    echo "Database connection successful!";
-} else {
-    echo "Database connection failed!";
-}
+$users = $user->get_all_users();
+
+print_r($users);
 
 ?>
